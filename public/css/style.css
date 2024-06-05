@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #eadbc8af; /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 10px 0;
+  /* box-shadow: 2px 0px 30px #114232; */
+}
+.navbar-brand {
+  font-family: "MuseoModerno", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.nav-image {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+}
+.nav-ithem {
+  margin: 10px;
+  padding: 1px 4px 1px 4px;
+}
+
+.home {
+  padding-top: 50px;
+}
+
+.about {
+  max-width: 90%;
+  font-family: "Mate SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #114232;
+  font-weight: bold;
+}
+
+.home p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.img {
+  max-width: 80%;
+  width: 80%;
+  height: auto;
+}
+.card {
+  margin-top: 5px;
+}
+.card-header {
+  font-family: "Mate SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #114232;
+  font-weight: bold;
+}
+.card .btn {
+  background-color: #114232;
+  color: white;
+  border-radius: 4px;
+}
+.card .btn:hover {
+  background-color: #0a6847;
+  color: white;
+  border-radius: 4px;
+}
+.footer {
+  padding: 20px 0;
+
+  background-color: #0a6847;
+  color: #7aba78;
+  margin: auto;
+  text-align: center;
+}

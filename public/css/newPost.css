@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body {
+  background-image: url(/image/green.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form {
+  background-color: #1142324e;
+  backdrop-filter: blur(5px);
+  color: #114232;
+  padding: 20px;
+  border-radius: 5px;
+}
+h3 {
+  text-align: center;
+  font-family: "Mate SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+form .btn {
+  margin-top: 6px;
+}
