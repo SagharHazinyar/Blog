@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/newPost.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/image/logo.png" type="image/icon" />
+    <title>New Post</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/header.ejs') %>
+      <div class="row mt-5">
+        <div class="col-sm-12 mt-5 form">
+          <form action="/newPost" method="post" enctype="multipart/form-data">
+            <h3>Add New Post</h3>
+            <label for="title">Title: </label>
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              placeholder="Place"
+            />
+            <label for="description">Description: </label>
+            <textarea
+              name="description"
+              id="des"
+              class="form-control"
+              cols="30"
+              rows="5"
+            ></textarea>
+            <label for="image">Image: </label>
+            <input type="file" name="image" id="image" class="form-control" />
+            <button type="submit" class="btn btn-success">Add Post</button>
+            <button class="btn btn-dark">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ------  Footer ------  -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

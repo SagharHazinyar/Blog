@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/image/logo.png" type="image/icon" />
+    <title>Green Homeland</title>
+  </head>
+  <body class="container-fluid">
+    <!-- ------  Header (Navbar) ------  -->
+
+    <%- include('partials/header.ejs') %>
+
+    <!-- ------  About ------  -->
+    <div class="row mt-5 home">
+      <div class="col-sm-6 ml-2 b">
+        <h2 class="about">About</h2>
+        <p>
+          Welcome to Green Homeland, your gateway to the captivating sights of
+          Afghanistan. Discover hidden treasures, cultural marvels, and natural
+          beauty across this majestic land. From the peaks of the Hindu Kush to
+          the wonders of Kabul, join us on a journey of exploration and
+          adventure. Let Green Homeland be your guide to the wonders of
+          Afghanistan.
+        </p>
+      </div>
+
+      <!-- ------  About  Video ------  -->
+      <div class="col-sm-6">
+        <video src="/image/vedio1.mp4" controls autoplay></video>
+      </div>
+
+      <!-- ------  Rendering Cards  ------  -->
+      <% posts.forEach(function(post) { %>
+      <div class="col-sm-3">
+        <div class="card">
+          <% if (post.imagePath.startsWith('/uploads')) { %>
+          <img
+            src="<%= post.imagePath %>"
+            alt="<%= post.title %>"
+            class="card-image img-responsive"
+          />
+          <% } else { %>
+          <img
+            src="<%= post.image %>"
+            alt="<%= post.title %>"
+            class="card-image img-responsive"
+          />
+          <% } %>
+          <!-- <img
+            src="<%= post.image %>"
+            alt="<%= post.title %>"
+            class="card-image img-responsive"
+          /> -->
+          <h3 class="card-header"><%= post.title %></h3>
+          <p class="card-body"><%= post.description %></p>
+          <div class="card-footer">
+            <a href="/edit/<%= post.id %>" class="btn">Edit</a>
+
+            <form
+              action="/delete/<%= post.id %>"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <button type="submit" class="btn">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    <!-- ------  Footer ------  -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+</html>
